@@ -10,7 +10,7 @@ module.exports = {
 
 const fetchCountry = async (address) => {
     // for dev environments where we are on internal networks
-    if (address.startsWith("127.") || address.startsWith("192.")) {
+    if (address.startsWith("127.") || address.startsWith("192.") || address === '::1') {
         address = await publicIp.v4();
     }
     return axios({

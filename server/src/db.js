@@ -1,8 +1,10 @@
 const csv = require('csvtojson');
+const path = require('path');
 
 let data = [];
 let countries = [];
-csv().fromFile('./big-mac-index.csv').then(obj => {
+let csvPath = path.join(__dirname, '/big-mac-index.csv');
+csv().fromFile(csvPath).then(obj => {
     // sort data by date so we get the latest in our find call
     data = obj.sort((a, b) => `${b.Date}`.localeCompare(a.Date));
     countries = [...new Set(data.map(item => item.Country))];

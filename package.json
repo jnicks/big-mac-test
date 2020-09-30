@@ -1,0 +1,7 @@
+{
+  "name": "big-mac-test-josh-nicks",
+  "scripts": {
+    "start": "npm --prefix ./client run build && npm --prefix ./server run start",
+    "install": "npm --prefix ./client install && npm --prefix ./server install"
+  }
+}
